@@ -5,9 +5,9 @@ from netmiko import ConnectHandler
 #      print ("I am back {}".format(s))
 
 device = ConnectHandler(device_type="cisco_ios",ip=sys.argv[1],
-username=sys.argv[2],password=sys.argv[3])
+username=sys.argv[3],password=sys.argv[4])
 
-output = device.send_command('show version')
+output = device.send_command(sys.argv[2])
 
 print (output)
 
