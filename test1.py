@@ -6,8 +6,8 @@ from netmiko import ConnectHandler
 
 device = ConnectHandler(device_type="cisco_ios",ip=sys.argv[1],
 username=sys.argv[2],password=sys.argv[3])
-
-output = device.send_command(raw_input("What is the command\n"))
+command = raw_input("What is the command\n")
+output = device.send_command(command)
 
 print (output)
 
