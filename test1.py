@@ -1,4 +1,3 @@
-#!/Users/wenhaowu/p3/bin/python
 import sys
 import json
 from netmiko import ConnectHandler
