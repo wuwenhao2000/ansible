@@ -1,0 +1,10 @@
+---
+hostname: leaf1
+domain_name: wenhao.com
+vlans:
+ - name: web
+   id: 10
+ - name: app
+   id: 20
+ - name: db
+   id: 30 
