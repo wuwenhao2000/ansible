@@ -1,4 +1,10 @@
+{#if else used in j2#}
 interface {{ abc.name }}
+ description {{ abc.description }}
+ {% if abc.uplink %} 
+ switchport mode trunk
+ {% else %}
  switchport mode access
  switchport access vlan {{ abc.vlan }}
- description {{ abc.description }}
+ {% endif %}
+ 

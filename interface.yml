@@ -1,0 +1,15 @@
+---
+ - name: f1/0
+   vlan: 10
+   description: link_to_device
+   uplink: False
+
+ - name: f1/1
+   vlan: 11
+   description: link_to_server
+   uplink: False 
+
+ - name: f1/2
+   vlan: 12
+   description: link_to_lb
+   uplink: True

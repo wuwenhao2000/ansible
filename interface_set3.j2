@@ -1,0 +1,10 @@
+{#if else, for loop used in j2#}
+{% for n in abc %}
+interface {{ n }}
+{% if n == 'f0/1' %}
+switchport mode trunk
+{% else %}
+switchport mode access 
+switchport access vlan10
+{% endif %}
+{% endfor %}

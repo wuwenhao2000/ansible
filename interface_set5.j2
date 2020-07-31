@@ -1,0 +1,14 @@
+{# for, if function used in j2#}
+{# filter upper, filter is just like casting #}
+{% include "vlan.j2" %}
+
+{% for each in abc %}
+interface {{ each.name }}
+description {{ each.description|upper }}
+{% if each.uplink %}
+switchport mode trunk
+{% else %}
+switchport mode access
+switchport access vlan {{ each.vlan }}
+{% endif %}
+{% endfor %}

@@ -1,0 +1,11 @@
+{#if else used in j2#}
+{% for n in range(10) %}
+interface f0/{{ n+1 }}
+description {{ abc.description }}
+{% if n+1 <= 2 %}
+switchport mode trunk
+{% else %}
+switchport mode access
+switchport access vlan {{ abc.vlan }}
+{% endif %}
+{% endfor %}
