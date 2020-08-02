@@ -1,0 +1,9 @@
+---
+credential:
+  username: cisco
+  password: cisco
+  host: "{{ inventory_hostname }}"
+isis: 
+  global_style: wide
+  if_net: point-to-point
+  global_type: level-2-only
