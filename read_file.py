@@ -3,6 +3,9 @@ import yaml
 import json
 from jinja2 import Environment , FileSystemLoader
 
+
+
+
 ######################################################################
 
 # with open('interface.yml') as f:
@@ -27,7 +30,9 @@ ENV = Environment(loader=FileSystemLoader('.'))
 # template = ENV.get_template('interface_set2.j2') # J2 dragon bone
 # template = ENV.get_template('interface_set3.j2') # J2 dragon bone
 # template = ENV.get_template('interface_set4.j2') # J2 dragon bone
-template = ENV.get_template('interface_set5.j2') # J2 dragon bone
+# template = ENV.get_template('interface_set5.j2') # J2 dragon bone
+template = ENV.get_template('interface_set6.j2') # J2 dragon bone
+
 
 # the variable template is the file interface_set.j2
 # the variable will be used in the upper variable template

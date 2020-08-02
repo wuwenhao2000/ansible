@@ -1,0 +1,11 @@
+{% extends "no_http.j2" %} 
+{# “no_http.j2” is the parent template #}
+{% block same_name1 %}
+{# block name should keep same in child and parent template #}
+{# if the block name is the same, then only local block will be inherited #}
+{# if the block name is different, then only parent block will be inherited #}
+{# if there is NO extends, then local block and local left content will run #}
+{# if there is NO local block, then only parent template block will run #}
+ip http server
+ip http ecure-server
+{% endblock %}
