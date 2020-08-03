@@ -7,7 +7,7 @@ isis network {{ interface.net_type }}
 {% endif %}
 no shutdown
 {% endfor %}
-
+exit
 router {{ igp.protocol }}
 net {{ isis.global_area }}.{{ system_id }}
 metric-style {{ igp.global_style }}
