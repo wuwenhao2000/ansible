@@ -1,9 +1,13 @@
 ---
+os: ios
 credential:
   username: cisco
   password: cisco
   host: "{{ inventory_hostname }}"
-isis: 
+igp:
+  protocol: isis 
   global_style: wide
-  if_net: point-to-point
   global_type: level-2-only
+interface:
+  protocol: isis
+  net_type: point-to-point

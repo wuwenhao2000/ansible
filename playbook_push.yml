@@ -1,0 +1,18 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: define provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ credential.username }}"
+        password: "{{ credential.password }}"
+
+  - name: push configure
+    ios_config:
+      src: "./configs/{{ inventory_hostname }}.cfg"
+      provider: "{{ provider }}"
+      authorize: yes

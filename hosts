@@ -1,14 +1,14 @@
 [west:children]
 west-pe
 west-ce
+[east:children]
+east-pe
+east-ce
 [west-pe]
 r2
 r3
 [west-ce]
 r1
-[east:children]
-east-pe
-east-ce
 [east-pe]
 r4
 r5
