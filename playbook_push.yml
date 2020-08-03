@@ -4,8 +4,8 @@
   gather_facts: no
 
   tasks:
-  - name: define provider
-    set_fact:
+  - name: 
+      define provider:
       provider:
         host: "{{ inventory_hostname }}"
         username: "{{ credential.username }}"
