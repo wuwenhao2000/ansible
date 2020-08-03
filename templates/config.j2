@@ -9,7 +9,7 @@ ip router {{ interface.protocol }}
 isis network {{ interface.net_type }}
 {% endif %}
 {% endfor %}
-
+exit
 {# IGP config #}
 router {{ igp.protocol }}
 net {{ isis.global_area }}.{{ system_id }}
