@@ -1,16 +1,13 @@
-{# the interface_config #}
 {% for one in interfaces.each %}
-
 interface {{ one.name }}
 ip address {{ one.ip }} {{ one.mask }}
-no shutdown
 ip router {{ interface.protocol }}
 {% if 'f' in one.name %}
 isis network {{ interface.net_type }}
 {% endif %}
+no shutdown
 {% endfor %}
 
-{# IGP config #}
 router {{ igp.protocol }}
 net {{ isis.global_area }}.{{ system_id }}
 metric-style {{ igp.global_style }}
