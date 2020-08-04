@@ -14,7 +14,6 @@
   - name: show information
     ios_command:
       commands:
-        - show version
         - show ip route
       provider: "{{ provider }}"
     register: show
@@ -23,3 +22,6 @@
     debug: 
       var: show 
 
+  - name: show single
+    debug: 
+      var: ansible_net_version
