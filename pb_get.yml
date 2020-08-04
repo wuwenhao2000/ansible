@@ -14,7 +14,7 @@
   - name: show ip route
     ios_command:
       commands:
-        - show ip route | json
+        - show ip route|json
       provider: "{{ provider }}"
     register: route
 
