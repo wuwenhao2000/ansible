@@ -14,5 +14,5 @@
   - name: DEBUG OS VERSION 
     debug:
       var: ansible_net_version 
-    provider: "{{ provider }}"
-    authorize: yes
+      provider: "{{ provider }}"
+      authorize: yes
