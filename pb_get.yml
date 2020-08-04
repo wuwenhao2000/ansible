@@ -11,8 +11,10 @@
         username: "{{ credential.username }}"
         password: "{{ credential.password }}"
 
-  - name: DEBUG OS VERSION 
-    debug:
-      var: ansible_net_version 
+  - name: show information
+    ios_command:
+      commands:
+        - show version
+        - show ip route
       provider: "{{ provider }}"
-      authorize: yes
+    register: show
