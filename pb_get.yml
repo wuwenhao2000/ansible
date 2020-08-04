@@ -18,3 +18,8 @@
         - show ip route
       provider: "{{ provider }}"
     register: show
+
+  - name: show above variable
+    debug: 
+      var: show 
+
