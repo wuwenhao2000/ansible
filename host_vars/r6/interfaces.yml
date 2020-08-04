@@ -1,5 +1,4 @@
 ---
-system_id: 6666.6666.6666.00
 interfaces:
   each:
   - name: f0/0
