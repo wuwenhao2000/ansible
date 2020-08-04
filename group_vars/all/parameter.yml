@@ -1,9 +1,4 @@
 ---
-os: ios
-credential:
-  username: cisco
-  password: cisco
-  host: "{{ inventory_hostname }}"
 igp:
   protocol: isis 
   global_style: wide
