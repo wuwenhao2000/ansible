@@ -14,4 +14,4 @@
 
   - name: show ip route result
     debug: 
-      var: route.stdout.0
+      var: route.stdout_lines.0
