@@ -1,16 +1,16 @@
 {# interface config#}
-{% for one in interfaces.each %}
-interface {{ one.name }}
-ip address {{ one.ip }} {{ one.mask }}
-ip router {{ interface.protocol }}
+{%for one in interfaces.each%}
+interface {{one.name}}
+ip address {{one.ip}} {{one.mask}}
+ip router {{interface.protocol}}
 no shutdown
-{% if 'f' in one.name %}
-isis network {{ interface.net_type }}
-{% endif %}
-{% endfor %}
+{%if 'f' in one.name%}
+isis network {{interface.net_type}}
+{%endif%}
+{%endfor%}
 
 {# isis config#}
-router {{ igp.protocol }}
-net {{ isis.global_area }}.{{ system_id }}
-metric-style {{ igp.global_style }}
-is-type {{ igp.global_type }}
+router {{igp.protocol}}
+net {{isis.global_area}}.{{system_id}}
+metric-style {{igp.global_style}}
+is-type {{igp.global_type}}
