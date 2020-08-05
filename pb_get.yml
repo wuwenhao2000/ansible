@@ -5,13 +5,6 @@
   gather_facts: no
 
   tasks:
-  - name: define provider
-    set_fact:
-      provider:
-        host: "{{inventory_hostname}}"
-        username: "{{credential.username}}"
-        password: "{{credential.password}}"
-
   - name: show ip route
     ios_command:
       commands:
