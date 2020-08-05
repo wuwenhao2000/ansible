@@ -19,4 +19,4 @@
   - name: save the routing result
     template:
       src: "./routing.j2"
-      dest: "./results/{{inventory_hostname}}_routing.cfg" 
+      dest: "./results/{{inventory_hostname}}_routing.txt" 
