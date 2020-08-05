@@ -8,15 +8,15 @@
   - name: define provider
     set_fact:
       provider:
-        host: "{{ inventory_hostname }}"
-        username: "{{ credential.username }}"
-        password: "{{ credential.password }}"
+        host: "{{inventory_hostname}}"
+        username: "{{credential.username}}"
+        password: "{{credential.password}}"
 
   - name: show ip route
     ios_command:
       commands:
         - show ip route
-      provider: "{{ provider }}"
+      provider: "{{provider}}"
     register: route
 
   - name: show ip route result

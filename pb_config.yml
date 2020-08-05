@@ -8,4 +8,4 @@
   - name: interface
     template:
       src: "./config.j2"
-      dest: "./configs/{{ inventory_hostname }}.cfg" 
+      dest: "./configs/{{inventory_hostname}}.cfg" 
