@@ -15,3 +15,8 @@
   - name: show ip route result
     debug: 
       var: route.stdout_lines.0
+
+  - name: save the routing result
+    template:
+      src: "./routing.j2"
+      dest: "./results/{{inventory_hostname}}_routing.cfg" 
