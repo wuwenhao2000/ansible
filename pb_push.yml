@@ -4,14 +4,14 @@
   connection: local
   gather_facts: no
 
-- name: define provider
-  set_fact:
-    provider:
-      host: "{{ inventory_hostname }}"
-      username: "{{ credential.username }}"
-      password: "{{ credential.password }}"
-
   tasks:
+  - name: define provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ credential.username }}"
+        password: "{{ credential.password }}"
+
   - name: push configure
     ios_config:
       src: "./configs/{{ inventory_hostname }}.cfg"
