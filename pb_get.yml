@@ -14,12 +14,12 @@
 
   - name: show ip route result
     debug: 
-      var: route
+      var: route.stdout.0
 
   - name: show ios_facts
     ios_facts: 
-      provider: "{{ provider }}"
+      provider: "{{provider}}"
 
   - name: show ansible_net_version
     debug: 
-      var: ansible_net_version
+      var: ansible_net_version.stdout.0
