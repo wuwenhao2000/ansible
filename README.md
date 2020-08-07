@@ -15,3 +15,9 @@ The 10.0.1.0/24 is used in production network, in this case we use ISIS, BGP, MP
 There are 2 branches master and second, they have different variable provisioning functions
 
 If you also are interested in or have other good suggestions, please kindly let me know
+
+routine/netmiko/netmiko1 is based on standard netmiko
+
+routine/netmiko/netmiko1a is based on netmiko with template_fsm
+
+routine/netmiko/template_fsm is based on template_fsm parsing for string
