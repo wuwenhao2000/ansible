@@ -7,7 +7,7 @@ from netmiko import ConnectHandler
 device = ConnectHandler(device_type="cisco_ios",ip=sys.argv[1],
 username="cisco",password="cisco")
 
-output = device.send_command(input("What is the command\n"),use_textfsm=False)
+output = device.send_command(input("What is the command\n"),use_textfsm=True)
 
 print (output)
 
