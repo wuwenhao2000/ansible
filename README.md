@@ -12,7 +12,7 @@ The network topology is in the pic of "lab_pic.jpg", the f1/0 of each device is 
 
 The 10.0.1.0/24 is used in production network, in this case we use ISIS, BGP, MPLS. All these config is configed by Ansible
 
-There are 2 branches master and second, they have different variable provisioning functions
+There are 2 branches master and second, they have different variable provisioning functions, master is based on variable file function, second is based on subdirectory function
 
 If you also are interested in or have other good suggestions, please kindly let me know
 
