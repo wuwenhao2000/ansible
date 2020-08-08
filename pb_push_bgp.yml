@@ -2,15 +2,8 @@
 - hosts: all
   connection: local
   gather_facts: no
-
+  
   tasks:
-  - name: define provider
-    set_fact:
-      provider:
-        host: "{{ inventory_hostname }}"
-        username: "{{ credential.username }}"
-        password: "{{ credential.password }}"
-
   - name: push BGP configure
     ios_config:
       src: "./configs/{{ inventory_hostname }}_bgp.cfg"
