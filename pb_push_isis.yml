@@ -11,8 +11,8 @@
         username: "{{ credential.username }}"
         password: "{{ credential.password }}"
 
-  - name: push configure
+  - name: push isis configure
     ios_config:
-      src: "./configs/{{ inventory_hostname }}.cfg"
+      src: "./configs/{{ inventory_hostname }}_isis.cfg"
       provider: "{{ provider }}"
       authorize: yes
