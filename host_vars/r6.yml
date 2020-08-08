@@ -1,4 +1,5 @@
 ---
+lo0: 6.6.6.6
 system_id: 6666.6666.6666.00
 interfaces:
   each:

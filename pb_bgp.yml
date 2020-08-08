@@ -1,0 +1,10 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: interface
+    template:
+      src: "./bgp.j2"
+      dest: "./configs/{{ inventory_hostname }}_bgp.cfg"

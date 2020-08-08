@@ -1,4 +1,5 @@
 ---
+lo0: 5.5.5.5
 system_id: 5555.5555.5555.00
 interfaces:
   each:

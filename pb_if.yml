@@ -1,0 +1,10 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: interface
+    template:
+      src: "./interface.j2"
+      dest: "./configs/{{ inventory_hostname }}_if.cfg"

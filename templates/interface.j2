@@ -1,4 +1,3 @@
-{# interface config#}
 {% for one in interfaces.each %}
 interface {{ one.name }}
 ip address {{ one.ip }} {{ one.mask }}
@@ -8,9 +7,3 @@ no shutdown
 isis network {{ interface.net_type }}
 {% endif %}
 {% endfor %}
-
-{# isis config#}
-router {{ igp.protocol }}
-net {{ isis.global_area }}.{{ system_id }}
-metric-style {{ igp.global_style }}
-is-type {{ igp.global_type }}

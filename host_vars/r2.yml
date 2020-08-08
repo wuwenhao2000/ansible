@@ -1,4 +1,5 @@
 ---
+lo0: 2.2.2.2
 system_id: 2222.2222.2222.00
 interfaces:
   each:

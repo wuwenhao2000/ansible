@@ -1,0 +1,71 @@
+router bgp {{bgp.as}}
+{% if inventory_hostname == 'r1' %}
+{% set add_list = ['2.2.2.2','3.3.3.3'] %}
+{% for each in add_list %}
+neighbor {{each}} remote-as {{bgp.as}}
+neighbor {{each}} update-source Loopback0
+neighbor {{each}} route-reflector-client
+{% endfor %}
+network {{network.prefix}}
+
+{% elif inventory_hostname == 'r2' %}
+{% set add_list = ['1.1.1.1','4.4.4.4'] %}
+{% for each in add_list %}
+{% if each == '1.1.1.1' %}
+neighbor {{each}} remote-as {{bgp.as}}
+neighbor {{each}} update-source Loopback0
+{% else %}
+neighbor {{each}} remote-as {{ hostvars['r4']['bgp']['as']}}
+neighbor {{each}} update-source Loopback0
+neighbor {{each}} ebgp-multihop 255
+{% endif %}
+{% endfor %}
+
+{% elif inventory_hostname == 'r3' %}
+{% set add_list = ['1.1.1.1','5.5.5.5'] %}
+{% for each in add_list %}
+{% if each == '1.1.1.1' %}
+neighbor {{each}} remote-as {{bgp.as}}
+neighbor {{each}} update-source Loopback0
+{% else %}
+neighbor {{each}} remote-as {{ hostvars['r5']['bgp']['as']}}
+neighbor {{each}} update-source Loopback0
+neighbor {{each}} ebgp-multihop 255
+{% endif %}
+{% endfor %}
+
+{% elif inventory_hostname == 'r4' %}
+{% set add_list = ['2.2.2.2','6.6.6.6'] %}
+{% for each in add_list %}
+{% if each == '6.6.6.6' %}
+neighbor {{each}} remote-as {{bgp.as}}
+neighbor {{each}} update-source Loopback0
+{% else %}
+neighbor {{each}} remote-as {{ hostvars['r2']['bgp']['as']}}
+neighbor {{each}} update-source Loopback0
+neighbor {{each}} ebgp-multihop 255
+{% endif %}
+{% endfor %}
+
+{% elif inventory_hostname == 'r5' %}
+{% set add_list = ['3.3.3.3','6.6.6.6'] %}
+{% for each in add_list %}
+{% if each == '6.6.6.6' %}
+neighbor {{each}} remote-as {{bgp.as}}
+neighbor {{each}} update-source Loopback0
+{% else %}
+neighbor {{each}} remote-as {{ hostvars['r3']['bgp']['as']}}
+neighbor {{each}} update-source Loopback0
+neighbor {{each}} ebgp-multihop 255
+{% endif %}
+{% endfor %}
+
+{% elif inventory_hostname == 'r6' %}
+{% set add_list = ['4.4.4.4','5.5.5.5'] %}
+{% for each in add_list %}
+neighbor {{each}} remote-as {{bgp.as}}
+neighbor {{each}} update-source Loopback0
+neighbor {{each}} route-reflector-client
+{% endfor %}
+network {{network.prefix}}
+{% endif %}

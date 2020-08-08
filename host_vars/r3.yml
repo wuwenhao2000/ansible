@@ -1,4 +1,5 @@
 ---
+lo0: 3.3.3.3
 system_id: 3333.3333.3333.00
 interfaces:
   each:

@@ -1,3 +1,7 @@
 ---
 isis: 
   global_area: 49.0001
+bgp:
+  as: 100
+network:
+  prefix: 192.168.1.0
