@@ -10,7 +10,9 @@
       connection: ssh
       platform: cisco_ios
       command: 'show version'
-      host: "{{ inventory_hostname }}"
+      # host: "{{ inventory_hostname }}"
+      index_file: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
+      template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
     # register:  mydata
