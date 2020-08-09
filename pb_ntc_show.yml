@@ -1,0 +1,22 @@
+---
+- name: default setting
+  hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: show ip route
+    ntc_show_command:
+      commands:
+        - show ip route
+      provider: "{{provider}}"
+    register: route
+
+  # - name: show ip route result
+  #   debug: 
+  #     var: route.stdout_lines.0
+
+  # - name: save the routing result
+  #   template:
+  #     src: "./routing.j2"
+  #     dest: "./results/{{inventory_hostname}}_routing.txt" 
