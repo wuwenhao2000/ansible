@@ -7,7 +7,7 @@
   tasks:
   - name: show ip route with ntc_show_command
     ntc_get_facts:
-      platform: cisco_ios
+      platform: cisco_ios_ssh
       # command: 'show ip route'
       host: "{{ inventory_hostname }}"
       # template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
