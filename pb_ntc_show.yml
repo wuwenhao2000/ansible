@@ -5,23 +5,12 @@
   gather_facts: no
 
   tasks:
-  - name: GET DATA
+  - name: show ip route
     ntc_show_command:
-      connection: ssh
       platform: cisco_ios
-      command: 'show version'
-      # host: "{{ inventory_hostname }}"
-      index: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
+      command: 'sh ip route'
+      host: "{{ inventory_hostname }}"
       template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
-    # register:  mydata
-
-  # - name: show ip route result
-  #   debug: 
-  #     var: route.stdout_lines.0
-
-  # - name: save the routing result
-  #   template:
-  #     src: "./routing.j2"
-  #     dest: "./results/{{inventory_hostname}}_routing.txt" 
+      use_templates: True

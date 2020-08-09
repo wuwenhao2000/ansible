@@ -1,4 +1,5 @@
 ---
+ansible_python_interpreter: /root/p3/bin/python
 os: ios
 provider:
   username: cisco
