@@ -9,7 +9,9 @@
         dev_os: "{{os}}"
         username: "{{ provider.username }}"
         password: "{{ provider.password }}"
-        filter: "facts,interfaces,bgp_neighbors"
+        # filter: "facts,interfaces,bgp_neighbors"
+        filter: "facts"
+
       register: result
 
     - debug:
