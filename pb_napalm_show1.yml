@@ -10,7 +10,7 @@
         username: "{{ provider.username }}"
         password: "{{ provider.password }}"
         filter: "facts,interfaces,bgp_neighbors"
-
+      register: result
 
     - debug:
-        var: napalm_facts
+        var: result
