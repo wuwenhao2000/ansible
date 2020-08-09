@@ -28,5 +28,5 @@
 
   - name: save the routing result
     template:
-      src: "./routetable.j2"
+      src: "./templates/routetable.j2"
       dest: "./results/{{inventory_hostname}}_routing.txt" 
