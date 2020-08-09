@@ -9,8 +9,8 @@
         dev_os: "{{os}}"
         username: "{{ provider.username }}"
         password: "{{ provider.password }}"
-        # filter: "facts,interfaces,bgp_neighbors"
-        filter: "facts"
+        filter: "facts,interfaces,bgp_neighbors"
+        # https://napalm.readthedocs.io/en/latest/support/index.html
 
       register: result
 
