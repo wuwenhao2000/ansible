@@ -10,10 +10,10 @@
       platform: cisco_ios
       # command: 'show ip route'
       host: "{{ inventory_hostname }}"
-      template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
+      # template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
-    register: routea
+    # register: routea
 
   # - name: show ip route standard
   #   ios_command:
