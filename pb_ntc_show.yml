@@ -5,12 +5,19 @@
   gather_facts: no
 
   tasks:
-  - name: show ip route
+  - name: show ip route with ntc_show_command
     ntc_show_command:
       platform: cisco_ios
-      command: 'sh ip route'
+      command: 'show ip route'
       host: "{{ inventory_hostname }}"
       template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
-      use_templates: True
+      # use_templates: True
+
+  - name: show ip route standard
+    ios_command:
+      commands:
+        - show ip route
+      provider: "{{provider}}"
+    # register: route
