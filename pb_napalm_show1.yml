@@ -1,10 +1,11 @@
 ---
-- hosts: r1
+- hosts: all
   connection: local
   gather_facts: no
   tasks:
     - name: napalm get_facts
       napalm_get_facts:
+        host: "{{ inventory_hostname }}"
         filter: facts,interfaces
 
     - debug:
