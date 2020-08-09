@@ -7,13 +7,10 @@
   tasks:
   - name: GET DATA
     ntc_show_command:
-      # connection: offline
-      # file: tests/cisco_nxos/cisco_nxos_show_version.raw
-      # vendor: cisco_nxos
-      # device_type: cisco_nxos
+      connection: ssh
       platform: cisco_ios
       command: 'show version'
-      # host: "{{ inventory_hostname }}"
+      host: "{{ inventory_hostname }}"
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
     # register:  mydata
