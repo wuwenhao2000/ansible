@@ -5,8 +5,10 @@
   tasks:
     - name: napalm get_facts
       napalm_get_facts:
-        hostname: "{{ inventory_hostname }}"
-        dev_os: "{{ os }}"
+        # hostname: "{{ inventory_hostname }}"
+        dev_os: "{{os}}"
+        username: "{{ provider.username }}"
+        password: "{{ provider.password }}"
         filter: facts,interfaces
 
     - debug:
