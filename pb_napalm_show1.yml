@@ -9,7 +9,7 @@
         dev_os: "{{os}}"
         username: "{{ provider.username }}"
         password: "{{ provider.password }}"
-        filter: facts,interfaces
+        # filter: facts,interfaces
 
     - debug:
         var: napalm_facts
