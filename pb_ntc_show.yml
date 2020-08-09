@@ -13,11 +13,20 @@
       template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
-      # use_templates: True
+    register: routea
 
   - name: show ip route standard
     ios_command:
       commands:
         - show ip route
       provider: "{{provider}}"
-    # register: route
+    register: routeb
+
+  # - name: show ip route result
+  #   debug: 
+  #     var: route.stdout_lines.0
+
+  - name: save the routing result
+    template:
+      src: "./routetable.j2"
+      dest: "./results/{{inventory_hostname}}_routing.txt" 
