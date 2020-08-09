@@ -5,7 +5,8 @@
   tasks:
     - name: napalm get_facts
       napalm_get_facts:
-        host: "{{ inventory_hostname }}"
+        hostname: {{ inventory_hostname }}
+        dev_os: {{ os }}
         filter: facts,interfaces
 
     - debug:
