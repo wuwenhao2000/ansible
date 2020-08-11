@@ -7,7 +7,8 @@
   - name: remove isis configure
 
     ios_config:
-      lines: {{item}}
+      lines: 
+        - {{item}}
       with_items: 
         - no router isis
       provider: "{{ provider }}"
