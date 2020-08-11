@@ -1,0 +1,20 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: remove isis configure
+    ios_config:
+      command: {{item}}
+      with_items: 
+        - no router isis
+      provider: "{{ provider }}"
+      authorize: yes
+
+  # - name: remove bgp configure
+  #   ios_config:
+  #     command: no router isis 100
+  #   when:  hostvars['r4']['bgp']['as']
+  #     provider: "{{ provider }}"
+  #     authorize: yes 
