@@ -5,10 +5,10 @@
 
   tasks:
   - name: remove isis configure
+    with_items: 
+      - no router isis
     ios_config:
       command: {{item}}
-      with_items: 
-        - no router isis
       provider: "{{ provider }}"
       authorize: yes
 
