@@ -7,11 +7,11 @@
   - name: remove isis configure
 
     ios_config:
-      command: {{item}}
-    with_items: 
-      - no router isis
-    provider: "{{ provider }}"
-    authorize: yes
+      lines: {{item}}
+      with_items: 
+        - no router isis
+      provider: "{{ provider }}"
+      authorize: yes
 
   # - name: remove bgp configure
   #   ios_config:
