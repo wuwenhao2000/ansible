@@ -8,9 +8,9 @@
 
     ios_config:
       lines: 
-        - {{item}}
-      with_items: 
         - no router isis
+      # with_items: 
+      #   - no router isis
       provider: "{{ provider }}"
       authorize: yes
 
