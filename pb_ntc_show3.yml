@@ -5,9 +5,7 @@
   gather_facts: no
 
   tasks:
-
-
   - name: Gather all legacy facts
     ios_facts:
-      # gather_subset: all
-    provider: "{{provider}}"
+      gather_subset: all
+      provider: "{{provider}}"
