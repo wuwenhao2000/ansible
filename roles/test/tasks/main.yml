@@ -9,9 +9,6 @@
     password: "{{ provider.password }}"
   register: routea
 
-- name: show ip route standard
-  ios_command:
-    commands:
-      - show ip route
-    provider: "{{provider}}"
-  register: routeb
+- name: show ip route result
+  debug: 
+    var: routea
