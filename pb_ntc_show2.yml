@@ -3,6 +3,5 @@
   hosts: all
   connection: local
   gather_facts: no
-
   roles:
    - test
