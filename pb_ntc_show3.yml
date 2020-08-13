@@ -1,0 +1,12 @@
+---
+- name: default setting
+  hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+
+  - name: Gather all legacy facts
+    ios_facts:
+      # gather_subset: all
