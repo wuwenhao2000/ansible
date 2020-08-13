@@ -11,7 +11,7 @@
       host: "{{ inventory_hostname }}"
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
-    # register: routea
+    register: routea
 
   # - name: show ip route standard
   #   ios_command:
@@ -20,9 +20,9 @@
   #     provider: "{{provider}}"
   #   register: routeb
 
-  # # - name: show ip route result
-  # #   debug: 
-  # #     var: route.stdout_lines.0
+  - name: show ip route result
+    debug: 
+      var: routea
 
   # - name: save the routing result
   #   template:

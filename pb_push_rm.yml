@@ -5,7 +5,6 @@
 
   tasks:
   - name: remove isis configure
-
     ios_config:
       lines: 
         - no router isis
