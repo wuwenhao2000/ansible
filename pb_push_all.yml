@@ -1,4 +1,4 @@
 ---
 - include: pb_push_isis.yml
-- include: pb_push_interface.yml
+- include: pb_push_if.yml
 - include: pb_push_bgp.yml
