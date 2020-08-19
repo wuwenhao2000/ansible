@@ -1,2 +1,6 @@
 ---
-# tasks file for isis
+- name: push isis configure
+  ios_config:
+    src: "../files/{{ inventory_hostname }}_isis.cfg"
+    provider: "{{ provider }}"
+    authorize: yes

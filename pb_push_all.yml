@@ -3,21 +3,7 @@
   connection: local
   gather_facts: no
 
-  tasks:
-  - name: push isis configure
-    ios_config:
-      src: "./configs/{{ inventory_hostname }}_isis.cfg"
-      provider: "{{ provider }}"
-      authorize: yes
-    
-  - name: push interface configure
-    ios_config:
-      src: "./configs/{{ inventory_hostname }}_if.cfg"
-      provider: "{{ provider }}"
-      authorize: yes
-
-  - name: push BGP configure
-    ios_config:
-      src: "./configs/{{ inventory_hostname }}_bgp.cfg"
-      provider: "{{ provider }}"
-      authorize: yes
+  roles:
+    - isis
+    - interfaces
+    - bgp

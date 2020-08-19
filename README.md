@@ -21,3 +21,10 @@ routine/netmiko/netmiko1 is based on standard netmiko
 routine/netmiko/netmiko1a is based on netmiko with template_fsm
 
 routine/netmiko/template_fsm is based on template_fsm parsing for string
+
+########
+In the first step I define all the functions in integrated playbook which is 
+high efficient, however the sharing is not good enough
+
+In the second step I define the role and to split the partition configs into
+the corresponding roles, which makes the whole structure more sharing and clear 

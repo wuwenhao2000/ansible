@@ -1,2 +1,6 @@
 ---
-# tasks file for interface
+- name: push interface configure
+  ios_config:
+    src: "../files/{{ inventory_hostname }}_if.cfg"
+    provider: "{{ provider }}"
+    authorize: yes

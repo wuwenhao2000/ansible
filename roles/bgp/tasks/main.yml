@@ -1,2 +1,6 @@
 ---
-# tasks file for bgp
+- name: push BGP configure
+  ios_config:
+    src: "../files/{{ inventory_hostname }}_bgp.cfg"
+    provider: "{{ provider }}"
+    authorize: yes
