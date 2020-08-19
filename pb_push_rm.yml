@@ -4,10 +4,11 @@
   gather_facts: no
 
   tasks:
-  - name: remove existing igp and bgp configure
+  - name: remove existing configure
     ios_config:
       lines:
         - no router isis
         - no router bgp {{bgp.as}}
+        - no cdp run
       provider: "{{ provider }}"
       authorize: yes
