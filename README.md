@@ -30,6 +30,9 @@ In the second step I define the role and to split the partition configs into
 the corresponding roles, which makes the whole structure more sharing and clear 
 
 pb_push_if.yml, is used to config interface specially
+
 pb_push_bgp.yml, is used to config BGP specially
+
 pb_push_isis.yml, is used to config ISIS specially
+
 pb_push_all.yml, is used to summary above ones together
