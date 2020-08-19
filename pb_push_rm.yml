@@ -6,10 +6,9 @@
   tasks:
   - name: remove isis configure
     ios_config:
-      lines: 
+      lines:
         - no router isis
-      # with_items: 
-      #   - no router isis
+        - no router bgp {{bgp.as}}
       provider: "{{ provider }}"
       authorize: yes
 
