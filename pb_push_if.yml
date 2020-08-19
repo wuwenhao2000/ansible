@@ -3,9 +3,5 @@
   connection: local
   gather_facts: no
 
-  tasks:
-  - name: push interface configure
-    ios_config:
-      src: "./configs/{{ inventory_hostname }}_if.cfg"
-      provider: "{{ provider }}"
-      authorize: yes
+  roles:
+    - interface

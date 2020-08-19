@@ -3,9 +3,5 @@
   connection: local
   gather_facts: no
   
-  tasks:
-  - name: push BGP configure
-    ios_config:
-      src: "./configs/{{ inventory_hostname }}_bgp.cfg"
-      provider: "{{ provider }}"
-      authorize: yes
+  roles:
+    - bgp
