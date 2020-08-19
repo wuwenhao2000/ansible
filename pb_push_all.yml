@@ -5,5 +5,5 @@
 
   roles:
     - isis
-    - interfaces
+    - interface
     - bgp
