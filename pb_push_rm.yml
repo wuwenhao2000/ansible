@@ -19,6 +19,7 @@
         - no ip address
         - shutdown
       parents: interface {{ item }}
-      with_items: {{interfaces.each}}
+      with_items: 
+        - "{{interfaces.each}}"
       provider: "{{ provider }}"
       authorize: yes
