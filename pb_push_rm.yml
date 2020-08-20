@@ -19,7 +19,7 @@
       lines:
         - no ip address
         - shutdown
-      parents: interface {{ item.key=='name' }}
+      parents: interface {{ item['name'] }}
       # with_items: 
       #   - "{{interfaces.each}}"
       
