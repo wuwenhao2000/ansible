@@ -14,6 +14,7 @@
       authorize: yes
 
   - name: remove existing interface config
+    loop: "{{interfaces.each}}"
     ios_config:
       lines:
         - no ip address
@@ -21,6 +22,6 @@
       parents: interface {{ item.key=='name' }}
       # with_items: 
       #   - "{{interfaces.each}}"
-      loop: "{{interfaces.each}}"
+      
       provider: "{{ provider }}"
       authorize: yes
