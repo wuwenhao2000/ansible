@@ -3,7 +3,7 @@ interface {{ one.name }}
 ip address {{ one.ip }} {{ one.mask }}
 ip router {{ interface.protocol }}
 no shutdown
-{% if 'f' in one.name %}
+{% if 'f' or 'lo0' in one.name %}
 isis network {{ interface.net_type }}
 {% endif %}
 {% endfor %}

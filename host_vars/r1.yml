@@ -12,3 +12,6 @@ interfaces:
   - name: lo0
     ip: 1.1.1.1
     mask: 255.255.255.255
+  - name: lo1
+    ip: 192.168.1.1
+    mask: 255.255.255.0
