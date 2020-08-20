@@ -20,8 +20,9 @@
     #     - shutdown
     #   parents: interface {{ item['name'] }}
     
-    with_items: "{{ interfaces.each }}"
+    with_items: interfaces.each.stdout_lines
     register: var
+  - name: show
   - debug: var
       # provider: "{{ provider }}"
       # authorize: yes
