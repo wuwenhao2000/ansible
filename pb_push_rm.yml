@@ -20,7 +20,7 @@
     #     - shutdown
     #   parents: interface {{ item['name'] }}
     
-    with_items: {{ interfaces.each }}
+    with_items: "{{ interfaces.each }}"
     register: var
   - debug: var
       # provider: "{{ provider }}"
