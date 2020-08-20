@@ -4,11 +4,20 @@
   gather_facts: no
 
   tasks:
-  - name: remove existing configure
+  - name: remove existing protocol config
     ios_config:
       lines:
         - no router isis
         - no router bgp {{bgp.as}}
         - no cdp run
+      provider: "{{ provider }}"
+      authorize: yes
+
+  - name: remove existing interface config
+    ios_config:
+      lines:
+        - no ip address
+        - shutdown
+      parents: interface {{ interfaces.each.name }}
       provider: "{{ provider }}"
       authorize: yes
