@@ -1,9 +1,11 @@
 {% for one in interfaces.each %}
 interface {{ one.name }}
 ip address {{ one.ip }} {{ one.mask }}
-ip router {{ interface.protocol }}
 no shutdown
-{% if 'f' in one.name or 'lo0' in one.name %}
+{% if 'lo1' not in one.name %}
+ip router {{ interface.protocol }}
+{% endif %}
+{% if 'f' in one.name %}
 isis network {{ interface.net_type }}
 {% endif %}
 {% endfor %}
