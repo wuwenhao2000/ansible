@@ -18,7 +18,7 @@
       lines:
         - no ip address
         - shutdown
-      parents: interface {{ item['name'] }}
+      parents: interface {{ item }}
       with_items: interfaces.each.stdout_lines
       provider: "{{ provider }}"
       authorize: yes
