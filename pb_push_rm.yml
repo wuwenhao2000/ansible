@@ -18,6 +18,6 @@
       lines:
         - no ip address
         - shutdown
-      parents: interface {{ interfaces.each.name }}
+      parents: interface {{ interfaces.each }}
       provider: "{{ provider }}"
       authorize: yes
