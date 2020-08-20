@@ -36,3 +36,5 @@ pb_push_bgp.yml, is used to config BGP specially with roles specially
 pb_push_isis.yml, is used to config ISIS specially with roles specially
 
 pb_push_all.yml, is used to summary above ones together
+
+pb_push_rm.yml, is used to delete above configs together
