@@ -1,0 +1,14 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: show variables
+    loop: "{{test_dict.each}}" # loop should get a list
+    # with_items: "{{test_list}}" # loop should get a list
+    # with_items: "{{test_dict.each}}" # loop should get a list
+    # with_dict: "{{test_dict}}" # with_dict should get a dict
+    debug: 
+      # var: item['name']
+      var: item['name']

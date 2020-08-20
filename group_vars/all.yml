@@ -12,3 +12,24 @@ igp:
 interface:
   protocol: isis
   net_type: point-to-point
+
+
+
+test_list:
+  - aaa 
+  - bbb 
+  - ccc
+test_dict:
+  each:
+  - name: f0/0
+    ip: 10.0.1.1
+    mask: 255.255.255.252
+  - name: f0/1
+    ip: 10.0.1.5
+    mask: 255.255.255.252
+  - name: lo0
+    ip: 1.1.1.1
+    mask: 255.255.255.255
+  - name: lo1
+    ip: 192.168.1.1
+    mask: 255.255.255.0
