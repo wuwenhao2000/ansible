@@ -14,15 +14,11 @@
       authorize: yes
 
   - name: remove existing interface config
-    # ios_config:
-    #   lines:
-    #     - no ip address
-    #     - shutdown
-    #   parents: interface {{ item['name'] }}
-    
-    with_items: interfaces.each.stdout_lines
-    register: var
-  - name: show
-  - debug: var
-      # provider: "{{ provider }}"
-      # authorize: yes
+    ios_config:
+      lines:
+        - no ip address
+        - shutdown
+      parents: interface {{ item['name'] }}
+      with_items: interfaces.each.stdout_lines
+      provider: "{{ provider }}"
+      authorize: yes
