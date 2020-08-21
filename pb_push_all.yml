@@ -2,13 +2,4 @@
 - include: pb_push_isis.yml
 - include: pb_push_if.yml
 - include: pb_push_bgp.yml
-
-- hosts: all
-  connection: local
-  gather_facts: no
-  tasks:
-  - name: save config
-    ios_config:
-      save_when: always
-      provider: "{{ provider }}"
-      authorize: yes
+- include: pb_push_save.yml

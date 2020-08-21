@@ -1,0 +1,6 @@
+---
+- name: save config
+  ios_config:
+    save_when: always
+    provider: "{{ provider }}"
+    authorize: yes
