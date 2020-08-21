@@ -1,0 +1,10 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+
+  roles:
+    - isis 
+    - interface
+    - bgp 
+    - save
