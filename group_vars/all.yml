@@ -1,5 +1,5 @@
 ---
-ansible_python_interpreter: /root/p3/bin/python
+ansible_python_interpreter: ~/p3/bin/python
 os: ios
 provider:
   username: !vault |
