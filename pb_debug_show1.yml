@@ -4,11 +4,31 @@
   gather_facts: no
 
   vars:
-    someone: abc
-    sometwo:
+    oneA: |
+      you are
+      the best football
+      player in the
+      world
+    oneB: >
+      you are
+      the best football
+      player in the
+      world
+    two:
       - one
       - two 
       - three
+    three:
+      one: 1
+      two: 2
+      three: 3
+    four:
+      - one: 11
+        two: 22
+        three: 33
+      - abc: 44
+        def: 55
+        sgx: 66 
 
   tasks:
   # - name: show variables
@@ -19,15 +39,19 @@
   #   debug:
   #     # var: item.value[0].name
   #     var: item.name
-  - name: show current time
-    command: uptime
-    register: time
+  # - name: show current time
+  #   stat: path=~/
+  #   register: location
   - name: debug code
     # debug: msg="A debug message"
     # debug: var=someone  ###  "someone": "abc"
     # debug: msg="{{someone}}"  ###  "msg": "abc"
-    debug:
+    # with_items: "{{four}}"
+    # with_dict: "{{four}}"
+    debug: var=oneB
+
       # var: sometwo # var: quote the variable directly
       # msg: "{{time}}" # msg: quote the variable with jinja syntax
-      msg: "{{time}}" 
-      # var: time
+      # msg: "{{location}}" 
+
+    # when: right is defined
