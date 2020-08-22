@@ -4,25 +4,26 @@
   gather_facts: no
 
   vars:
-    oneA: |
+    one1: |
       you are
       the best football
       player in the
       world
-    oneB: >
+    one2: >
       you are
       the best football
       player in the
       world
-    two:
+    one3:
       - one
       - two 
       - three
-    three:
+    one4:
       one: 1
       two: 2
       three: 3
-    four:
+    one5:
+      - zero: 00
       - one: 11
         two: 22
         three: 33
@@ -48,10 +49,11 @@
     # debug: msg="{{someone}}"  ###  "msg": "abc"
     # with_items: "{{four}}"
     # with_dict: "{{four}}"
-    debug: var=oneB
+    debug: var=one5.1.one
+    # debug: msg={{one5}}
 
       # var: sometwo # var: quote the variable directly
       # msg: "{{time}}" # msg: quote the variable with jinja syntax
-      # msg: "{{location}}" 
+      # msg: "{{location}}"
 
     # when: right is defined
