@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: west east
   connection: local
   gather_facts: no
   
