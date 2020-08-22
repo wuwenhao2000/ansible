@@ -2,6 +2,7 @@
 - hosts: west east
   connection: local
   gather_facts: no
+  strategy: free
 
   tasks:
   - name: remove existing protocol config
