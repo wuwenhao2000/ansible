@@ -1,5 +1,5 @@
 ---
-- hosts: 10.0.0.10
+- hosts: master
   connection: local
   gather_facts: no
 
