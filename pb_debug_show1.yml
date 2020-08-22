@@ -1,14 +1,24 @@
 ---
-- hosts: all
+- hosts: 10.0.0.10
   connection: local
   gather_facts: no
 
+  vars:
+    someone: abc
+
   tasks:
-  - name: show variables
-    loop: "{{test_dict.each}}" # loop should get a list
-    # with_items: "{{test_list}}" # loop should get a list
-    # with_items: "{{test_dict.each}}" # loop should get a list
-    # with_dict: "{{test_dict}}" # with_dict should get a dict | .key and .value format
+  # - name: show variables
+  #   loop: "{{test_dict.each}}" # loop should get a list
+  #   # with_items: "{{test_list}}" # loop should get a list
+  #   # with_items: "{{test_dict.each}}" # loop should get a list
+  #   # with_dict: "{{test_dict}}" # with_dict should get a dict | .key and .value format
+  #   debug:
+  #     # var: item.value[0].name
+  #     var: item.name
+  - name: debug code
+    # debug: msg="A debug message"
+    # debug: var=someone  ###  "someone": "abc"
+    # debug: msg="{{someone}}"  ###  "msg": "abc"
     debug:
-      # var: item.value[0].name
-      var: item.name
+      var:
+        someone
