@@ -44,32 +44,16 @@
       - name: lo1
         ip: 192.168.1.1
         mask: 255.255.255.0
+
   tasks:
-  # - name: show variables
-  #   loop: "{{test_dict.each}}" # loop should get a list
-  #   # with_items: "{{test_list}}" # loop should get a list
-  #   # with_items: "{{test_dict.each}}" # loop should get a list
-  #   # with_dict: "{{test_dict}}" # with_dict should get a dict | .key and .value format
-  #   debug:
-  #     # var: item.value[0].name
-  #     var: item.name
-  # - name: show current time
-  #   stat: path=~/
-  #   register: location
-  - name: debug code
-    # debug: msg="A debug message"
-    # debug: var=someone  ###  "someone": "abc"
-    # debug: msg="{{someone}}"  ###  "msg": "abc"
-    # with_items: "{{four}}"
-    with_dict: "{{one6}}"
-    # with_items: "{{one6.each}}"
-    # loop: "{{one6.each}}"
-    # with_list: "{{one6.each}}"
-    debug: var=item.value.0.name
-    # debug: msg={{one5}}
+  - name: debug variables directly
+    # debug: var=one6.each.0.ip # parse the dict var once directly without loop function —— all in strateg
+    # debug: msg={{one6.each.0.ip}} # parse the dict var once directly without loop function —— all in strateg
 
-      # var: sometwo # var: quote the variable directly
-      # msg: "{{time}}" # msg: quote the variable with jinja syntax
-      # msg: "{{location}}"
-
-    # when: right is defined
+  # - name: debug variables with methods
+    # with_dict: "{{one6}}" # parse the dict var once directly without loop function —— all in strategy
+    # with_items: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
+    # loop: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
+    # with_list: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
+    # debug: var=item.ip
+    # debug: msg={{item.ip}}
