@@ -30,7 +30,20 @@
       - abc: 44
         def: 55
         sgx: 66 
-
+    one6:
+      each:
+      - name: f0/0
+        ip: 10.0.1.1
+        mask: 255.255.255.252
+      - name: f0/1
+        ip: 10.0.1.5
+        mask: 255.255.255.252
+      - name: lo0
+        ip: 1.1.1.1
+        mask: 255.255.255.255
+      - name: lo1
+        ip: 192.168.1.1
+        mask: 255.255.255.0
   tasks:
   # - name: show variables
   #   loop: "{{test_dict.each}}" # loop should get a list
@@ -48,8 +61,11 @@
     # debug: var=someone  ###  "someone": "abc"
     # debug: msg="{{someone}}"  ###  "msg": "abc"
     # with_items: "{{four}}"
-    # with_dict: "{{four}}"
-    debug: var=one5.1.one
+    with_dict: "{{one6}}"
+    # with_items: "{{one6.each}}"
+    # loop: "{{one6.each}}"
+    # with_list: "{{one6.each}}"
+    debug: var=item.value.0.name
     # debug: msg={{one5}}
 
       # var: sometwo # var: quote the variable directly
