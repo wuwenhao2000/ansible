@@ -1,6 +1,8 @@
 ---
 - name: default setting
   hosts: all
+  connection: local
+  gather_facts: no
   tasks:
   # - name: show ip route with ntc_show_command
   #   ntc_show_command:

@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  connection: local
+  gather_facts: no
   tasks:
     - name: napalm get_facts
       napalm_get_facts:

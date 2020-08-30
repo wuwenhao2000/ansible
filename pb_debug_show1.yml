@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  connection: local
+  gather_facts: no
   vars:
     one1: |
       you are
@@ -43,14 +45,14 @@
         mask: 255.255.255.0
 
   tasks:
-  - name: debug variables directly
-    # debug: var=one6.each.0.ip # parse the dict var once directly without loop function —— all in strateg
-    # debug: msg={{one6.each.0.ip}} # parse the dict var once directly without loop function —— all in strateg
+  # - name: debug variables directly
+  #   debug: var=one6.each.0.ip # parse the dict var once directly without loop function —— all in strateg
+  #   debug: msg={{one6.each.0.ip}} # parse the dict var once directly without loop function —— all in strateg
 
-  # - name: debug variables with methods
+  - name: debug variables with methods
     # with_dict: "{{one6}}" # parse the dict var once directly without loop function —— all in strategy
     # with_items: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
-    # loop: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
+    loop: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
     # with_list: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
-    # debug: var=item.ip
+    debug: var=item.ip
     # debug: msg={{item.ip}}

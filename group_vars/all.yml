@@ -1,7 +1,5 @@
 ---
 ansible_python_interpreter: ~/p3/bin/python
-connection: local
-gather_facts: no
 os: ios
 provider:
   username: !vault |
