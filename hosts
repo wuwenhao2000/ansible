@@ -5,14 +5,14 @@ westce
 eastpe
 eastce
 [westpe]
-r2 ansible_host=10.0.0.2
-r3 ansible_host=10.0.0.3
+r2
+r3
 [westce]
-r1 ansible_host=10.0.0.1
+r1
 [eastpe]
-r4 ansible_host=10.0.0.4
-r5 ansible_host=10.0.0.5
+r4
+r5
 [eastce]
-r6 ansible_host=10.0.0.6
+r6
 [master]
-localhost ansible_host=127.0.0.1
+localhost
