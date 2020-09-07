@@ -9,4 +9,4 @@
       gather_subset: all
       provider: "{{provider}}"
   - name: show variable
-    debug: var= gather_subset
+    debug: var=ansible_net_interfaces
