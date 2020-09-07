@@ -8,3 +8,5 @@
     ios_facts:
       gather_subset: all
       provider: "{{provider}}"
+  - name: show variable
+    debug: var= gather_subset
