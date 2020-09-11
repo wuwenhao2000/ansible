@@ -1,17 +1,17 @@
-job("generate_ansible_dls"){
+job("jenkins_child_from_git"){
   description("my dis job first 1")
   scm{github('wuwenhao2000/ansible','master')}
   triggers {githubPush()}
   wrappers {colorizeOutput(colorMap = 'xterm')}
   steps {
-    ansiblePlaybook("/var/lib/jenkins/workspace/generate_ansible_dls/pb_push_rm.yml") {
-    inventoryPath("/var/lib/jenkins/workspace/generate_ansible_dls/hosts")
+    ansiblePlaybook("/var/lib/jenkins/workspace/jenkins_child_from_git/pb_push_rm.yml") {
+    inventoryPath("/var/lib/jenkins/workspace/jenkins_child_from_git/hosts")
     colorizedOutput(true)
     hostKeyChecking(false)
     unbufferedOutput(true)
     vaultCredentialsId("ansible_vault")}
-    ansiblePlaybook("/var/lib/jenkins/workspace/generate_ansible_dls/pb_push_all_roles.yml") {
-    inventoryPath("/var/lib/jenkins/workspace/generate_ansible_dls/hosts")
+    ansiblePlaybook("/var/lib/jenkins/workspace/jenkins_child_from_git/pb_push_all_roles.yml") {
+    inventoryPath("/var/lib/jenkins/workspace/jenkins_child_from_git/hosts")
     colorizedOutput(true)
     hostKeyChecking(false)
     unbufferedOutput(true)
