@@ -1,8 +1,8 @@
 job("generate_ansible_dls"){
   description("my dis job first 1")
   scm{github('wuwenhao2000/ansible')}
-  wrappers {
-    colorizeOutput(colorMap = 'xterm')}
+  wrappers {colorizeOutput(colorMap = 'xterm')}
+  triggers {githubPush()}
   steps {
         ansiblePlaybook("/var/lib/jenkins/workspace/generate_ansible_dls/pb_push_rm.yml") {
         inventoryPath("/var/lib/jenkins/workspace/generate_ansible_dls/hosts")
@@ -19,7 +19,5 @@ job("generate_ansible_dls"){
         vaultCredentialsId("ansible_vault")
         }
     }
-  publishers {
-  mailer('wuwenhao0907@gmail.com', true, true)
-    }
+  publishers {mailer('wuwenhao0907@gmail.com', true, true)}
 }
