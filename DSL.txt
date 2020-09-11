@@ -1,0 +1,25 @@
+job("generate_ansible_dls"){
+  description("my dis job first 1")
+  scm{github('wuwenhao2000/ansible')}
+  wrappers {
+    colorizeOutput(colorMap = 'xterm')}
+  steps {
+        ansiblePlaybook("/var/lib/jenkins/workspace/generate_ansible_dls/pb_push_rm.yml") {
+        inventoryPath("/var/lib/jenkins/workspace/generate_ansible_dls/hosts")
+        colorizedOutput(true)
+        hostKeyChecking(false)
+        unbufferedOutput(true)
+        vaultCredentialsId("ansible_vault")
+        }
+    ansiblePlaybook("/var/lib/jenkins/workspace/generate_ansible_dls/pb_push_all_roles.yml") {
+        inventoryPath("/var/lib/jenkins/workspace/generate_ansible_dls/hosts")
+        colorizedOutput(true)
+        hostKeyChecking(false)
+        unbufferedOutput(true)
+        vaultCredentialsId("ansible_vault")
+        }
+    }
+  publishers {
+  mailer('wuwenhao0907@gmail.com', true, true)
+    }
+}
