@@ -1,6 +1,6 @@
 job("generate_ansible_dls"){
   description("my dis job first 1")
-  scm{github('wuwenhao2000/ansible')}
+  scm{github('wuwenhao2000/ansible','master')}
   wrappers {colorizeOutput(colorMap = 'xterm')}
   triggers {githubPush()}
   steps {
