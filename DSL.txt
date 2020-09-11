@@ -1,9 +1,7 @@
 job("generate_ansible_dls"){
   description("my dis job first 1")
-  scm{github('wuwenhao2000/ansible','master')
-  }
-  triggers {githubPush()
-  }
+  scm{github('wuwenhao2000/ansible','master')}
+  triggers {githubPush()}
   wrappers {
     colorizeOutput(colorMap = 'xterm')}
   steps {
@@ -22,7 +20,5 @@ job("generate_ansible_dls"){
         vaultCredentialsId("ansible_vault")
         }
     }
-  publishers {
-  mailer('wuwenhao0907@gmail.com',false,true)
-    }
+  publishers {mailer('wuwenhao0907@gmail.com',false,true)}
 }
