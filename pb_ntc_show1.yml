@@ -1,5 +1,5 @@
 ---
-- name: default setting show
+- name: default setting
   hosts: all
   connection: local
   gather_facts: no
