@@ -27,7 +27,7 @@
     with_items: "{{ result.response }}"
     
   - name: Verify Hostname
-    # ignore_errors: yes
+    ignore_errors: yes
     assert:
           that:
               - '"{{ hostname }}" in "{{ inventory_hostname }}"'
