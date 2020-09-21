@@ -23,7 +23,7 @@
   #   register: routeb
 
   - name: show result
-    debug: var= routea
+    debug: var=routea
 
   # - name: show ip route result
   #   debug: 
