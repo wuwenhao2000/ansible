@@ -15,16 +15,24 @@
       password: "{{ provider.password }}"
     register: result
 
-  # - name: show ip route standard
-  #   ios_command:
-  #     commands:
-  #       - show ip route
-  #     provider: "{{provider}}"
-  #   register: routeb
+  # - name: show result
+  #   debug: var=result.response
 
-  - name: show result
-    debug: var=result.response
-
+  - name: Get Hostname/Versions/Config-register
+    set_fact:
+        hostname: "{{ item.hostname }}"
+        version: "{{ item.running_image }}"
+        rommon: "{{ item.rommon }}"
+        config_register: "{{ item.config_register }}"
+    with_items: "{{ result.response }}"
+    
+  - name: Verify Hostname
+    ignore_errors: yes
+    assert:
+          that:
+              - '"{{ hostname }}" in "{{ inventory_hostname }}"'
+          msg: "Failed - {{ inventory_hostname }} - hostname"
+    
   # - name: show ip route result
   #   debug: 
   #     var: routeb.stdout_lines
