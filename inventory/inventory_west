@@ -1,0 +1,10 @@
+[west:children]
+westpe
+westce
+[westpe]
+r2
+r3
+[westce]
+r1
+[master]
+localhost

@@ -1,14 +1,6 @@
-[west:children]
-westpe
-westce
 [east:children]
 eastpe
 eastce
-[westpe]
-r2
-r3
-[westce]
-r1
 [eastpe]
 r4
 r5
