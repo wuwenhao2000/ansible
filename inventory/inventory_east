@@ -1,3 +1,5 @@
+[ios:children]
+east
 [east:children]
 eastpe
 eastce

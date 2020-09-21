@@ -49,10 +49,23 @@
   #   debug: var=one6.each.0.ip # parse the dict var once directly without loop function —— all in strateg
   #   debug: msg={{one6.each.0.ip}} # parse the dict var once directly without loop function —— all in strateg
 
-  - name: debug variables with methods
-    # with_dict: "{{one6}}" # parse the dict var once directly without loop function —— all in strategy
-    # with_items: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
-    loop: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
-    # with_list: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
-    debug: var=item.ip
-    # debug: msg={{item.ip}}
+  # - name: debug variables with methods
+  #   # with_dict: "{{one6}}" # parse the dict var once directly without loop function —— all in strategy
+  #   with_items: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
+  #   # loop: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
+  #   # with_list: "{{one6.each}}" # parse the list var with loop function —— one by one strategy
+  #   debug: var=item.ip
+  #   # debug: msg={{item.ip}}
+
+  - name: set facts
+    set_fact: 
+      ip_list: "{{one6.each.0.ip}}"
+    
+  - name: debug variables
+    debug: var=ip_list
+  - name: checking true or false
+    ignore_errors: true
+    assert:
+      that:
+        - "'10.0.1.0' in ip_list "
+      msg: "wrong"

@@ -1,3 +1,5 @@
+[ios:children]
+west
 [west:children]
 westpe
 westce
