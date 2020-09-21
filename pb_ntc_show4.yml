@@ -13,7 +13,7 @@
       # template_dir: "{{ ntc_module_location }}/ntc-templates/templates"
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
-    register: routea
+    register: result
 
   # - name: show ip route standard
   #   ios_command:
@@ -23,7 +23,7 @@
   #   register: routeb
 
   - name: show result
-    debug: var=routea
+    debug: var=result.response
 
   # - name: show ip route result
   #   debug: 
