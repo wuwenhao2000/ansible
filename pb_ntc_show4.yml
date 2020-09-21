@@ -10,7 +10,7 @@
       command: 'show version'
       host: "{{ inventory_hostname }}"
       template_dir: /root/.ansible/plugins/modules/ntc-ansible/ntc-templates/templates
-      # template_dir: "{{ ntc_module_location }}/ntc-templates/templates"
+      #template_dir: "{{ ntc_module_location }}/ntc-templates/templates"
       username: "{{ provider.username }}"
       password: "{{ provider.password }}"
     register: routea
