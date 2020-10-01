@@ -1,4 +1,4 @@
-job("jenkins_child_from_git"){
+job("jenkins_child_from_git3"){
   description("my dis job first 1")
   scm{github('wuwenhao2000/ansible','master')}
   triggers {githubPush()}
