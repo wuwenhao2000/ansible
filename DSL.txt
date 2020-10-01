@@ -1,5 +1,5 @@
 job("jenkins_child_from_git1"){
-  description("my dis job first 1")
+  description("my dis job first ")
   scm{github('wuwenhao2000/ansible','master')}
   triggers {githubPush()}
   wrappers {colorizeOutput(colorMap = 'xterm')}
