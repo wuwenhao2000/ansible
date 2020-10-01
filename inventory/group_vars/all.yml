@@ -1,6 +1,7 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
 ansible_module_dir: /root/.ansible/plugins/modules
+ansible_ssh_common_args: '-o ProxyCommand="ssh -W %h:%p -q root@192.168.1.229"'
 os: ios
 provider:
   username: !vault |
